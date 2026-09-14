@@ -18,4 +18,4 @@ extern const int WARD_BED_CAP[WARD_COUNT];
 extern int bedOccupancy[WARD_COUNT][MAX_BEDS];
 
 
-#endif // CONFIG_H_INCLUDED
+#endif
