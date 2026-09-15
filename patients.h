@@ -20,8 +20,8 @@ extern int patientCount;
 void patientIntake();
 
 
-int allocateBed(int wardNo);
 
 
 
-#endif // PATIENTS_H_INCLUDED
+
+#endif

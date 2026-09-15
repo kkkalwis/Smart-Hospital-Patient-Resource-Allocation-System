@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "patients.h"
+#include "bed.h"
 
 
 char patientName[MAX_PATIENTS][MAX_NAME_LEN];
@@ -60,11 +61,15 @@ void patientIntake()
 
         }while(specialtyId[id]<1||specialtyId[id]>SPECIALITY_COUNT);
 
+        int specialtyIndex=specialtyId[id]-1;
+        int SpecialtyCapCheck=allocateSpecialty(specialtyIndex);
 
+        if(SpecialtyCapCheck==-1){
+            printf("Full Specialty Patient Capacity Has Been Reached\n");
+            return;
+        }
 
-
-
-        printf("3.Ward Admission Details: \n");
+        printf("\n3.Ward Admission Details: \n");
 
         do{
             printf("Enter Ward Admission status(1=IS Admitted,0=Not admitted)");
@@ -87,7 +92,7 @@ void patientIntake()
                 printf("Patient Assigned to %s Bed No: %d",WARD_NAMES[wardindex],bedAllocation+1);
             }
             else{
-                printf("Full Bed capacity has been reached.\n");
+                printf("Full Bed Capacity Has Been Reached.\n");
                 admittedStatus[id]=0;
                 wardId[id]=0;
                 assignedBed[id]=-1;
