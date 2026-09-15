@@ -5,5 +5,6 @@
 int main()
 {
     patientIntake();
+    
     return 0;
 }
