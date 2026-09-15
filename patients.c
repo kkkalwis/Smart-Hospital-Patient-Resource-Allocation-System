@@ -2,6 +2,7 @@
 #include <string.h>
 #include "patients.h"
 #include "bed.h"
+#include "specialty.h"
 
 
 char patientName[MAX_PATIENTS][MAX_NAME_LEN];
@@ -45,9 +46,8 @@ void patientIntake()
 
         printf("\n2.Specialty Selection: \n");
 
-        printf("\nAvailable Specialties\n");
-        printf("\n");
-        printf("\n%-15s %-25s %-15s","specialty ID","Specialty Name","Base fee\n");
+        printf("Available Specialties\n");
+        printf("\n%-15s %-25s %-15s\n","specialty ID","Specialty Name","Base fee");
         printf("-----------------------------------------------------------\n");
 
         for(int i=0;i<SPECIALITY_COUNT;i++)
@@ -72,7 +72,7 @@ void patientIntake()
         printf("\n3.Ward Admission Details: \n");
 
         do{
-            printf("Enter Ward Admission status(1=IS Admitted,0=Not admitted)");
+            printf("Enter Ward Admission status(1=IS Admitted,0=Not admitted): ");
             scanf("%d",&admittedStatus[id]);
 
         }while(admittedStatus[id]<0||admittedStatus[id]>1);
@@ -89,7 +89,7 @@ void patientIntake()
 
             if(bedAllocation!=-1){
                 assignedBed[id]=bedAllocation;
-                printf("Patient Assigned to %s Bed No: %d",WARD_NAMES[wardindex],bedAllocation+1);
+                printf("Patient Assigned to %s (Bed No: %d)\n",WARD_NAMES[wardindex],bedAllocation+1);
             }
             else{
                 printf("Full Bed Capacity Has Been Reached.\n");
