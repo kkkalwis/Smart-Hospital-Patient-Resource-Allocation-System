@@ -36,3 +36,10 @@ double grossTotalBill(int specialtyIndex,const double BASE_FEE[],double surcharg
     double total=BASE_FEE[specialtyIndex] + surchargeAmount + wardCostAmount;
     return total;
 }
+
+double calcAgeDiscount(int id,int patientAge[],double grossTotalAmount){
+    if(patientAge[id]<5 || patientAge[id]>65){
+        return grossTotalAmount * AGE_DISCOUNT;
+    }
+    return 0.0;
+}
