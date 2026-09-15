@@ -13,6 +13,8 @@ int admittedStatus[MAX_PATIENTS];
 int wardId[MAX_PATIENTS];
 int daysAdmitted[MAX_PATIENTS];
 int assignedBed[MAX_PATIENTS];
+int patientWaitTime[MAX_PATIENTS]={0};
+double patientBill[MAX_PATIENTS]={0};
 
 
 int patientCount=0;

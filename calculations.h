@@ -9,6 +9,7 @@
 
 #define AGE_DISCOUNT 0.15
 
+void calculationProcess(int id);
 int calcWaitingTime(int specialtyIndex,int specialtyQueueCount[],const int CONSULT_TIME[]);
 double calcSurcharge(int id,int specialtyIndex,int triageLevel[],const double BASE_FEE[]);
 double calcTotalWardCost(int id,int wardIndex,int admittedStatus[],int daysAdmitted[],const double WARD_DAILY_RATES[]);
