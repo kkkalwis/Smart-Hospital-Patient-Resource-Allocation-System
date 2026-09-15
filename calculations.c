@@ -2,11 +2,13 @@
 #include "calculations.h"
 #include "patients.h"
 
-int calcWaitingTime(int specialtyIndex,int specialtyDailyCount[],const int CONSULT_TIME[]){
-    return specialtyDailyCount[specialtyIndex] * CONSULT_TIME[specialtyIndex];
+int calcWaitingTime(int specialtyIndex,int specialtyQueueCount[],const int CONSULT_TIME[]){
+    int result= specialtyQueueCount[specialtyIndex] * CONSULT_TIME[specialtyIndex];
+    specialtyQueueCount[specialtyIndex]++;
+    return result;
 }
 
-double calcSurcharge(int id,int specialtyIndex,int triageLevel[],const int BASE_FEE[]){
+double calcSurcharge(int id,int specialtyIndex,int triageLevel[],const double BASE_FEE[]){
 
     
     switch(triageLevel[id]){
@@ -22,5 +24,15 @@ double calcSurcharge(int id,int specialtyIndex,int triageLevel[],const int BASE_
     }
 }
 
+double calcTotalWardCost(int id,int wardIndex,int admittedStatus[],int daysAdmitted[],const double WARD_DAILY_RATES[],){
+    if(admittedStatus[id]==1){
+        return daysAdmitted[id] * WARD_DAILY_RATES[wardIndex];
+    }
+    return 0.0;
+}
 
 
+double grossTotalBill(int specialtyIndex,const double BASE_FEE[],double surchargeAmount,double wardCostAmount){
+    double total=BASE_FEE[specialtyIndex] + surchargeAmount + wardCostAmount;
+    return total;
+}

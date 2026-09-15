@@ -10,3 +10,5 @@ const double WARD_DAILY_RATES[WARD_COUNT]={3000.00, 6000.00, 12000.00, 25000.00}
 const int WARD_BED_CAP[WARD_COUNT]={20, 10, 10, 5};
 
 int bedOccupancy[WARD_COUNT][MAX_BEDS]={0};
+
+int specialtyQueueCount[SPECIALITY_COUNT]={0};
