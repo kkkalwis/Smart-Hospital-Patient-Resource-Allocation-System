@@ -14,5 +14,6 @@ double calcSurcharge(int id,int specialtyIndex,int triageLevel[],const double BA
 double calcTotalWardCost(int id,int wardIndex,int admittedStatus[],int daysAdmitted[],const double WARD_DAILY_RATES[]);
 double grossTotalBill(int specialtyIndex,const double BASE_FEE[],double surchargeAmount,double wardCostAmount);
 double calcAgeDiscount(int id,int patientAge[],double grossTotalAmount);
+double calcFinalAmount(double grossTotalAmount,double discountAmount);
 
 #endif

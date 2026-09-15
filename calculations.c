@@ -43,3 +43,7 @@ double calcAgeDiscount(int id,int patientAge[],double grossTotalAmount){
     }
     return 0.0;
 }
+
+double calcFinalAmount(double grossTotalAmount,double discountAmount){
+    return grossTotalAmount-discountAmount;
+}
