@@ -3,7 +3,7 @@
 #include "patients.h"
 #include "bed.h"
 #include "specialty.h"
-#include "calcualtions.h"
+#include "calculations.h"
 #include "priority.h"
 #include "display.h"
 
@@ -86,18 +86,26 @@ void patientIntake()
         }while(admittedStatus[id]<0||admittedStatus[id]>1);
 
         if(admittedStatus[id]==1){
+
+            printf("Available Wards\n");
+            printf("\n%-15s %-25s %-17s\n","Ward ID","Ward Name","Daily Bed Rate");
+            printf("-----------------------------------------------------------\n");
+
+            for(int i=0;i<SPECIALITY_COUNT;i++){
+                printf("%-15d %-25s %-17.2f\n",i+1,WARD_NAMES[i],WARD_DAILY_RATES[i]);
+            }
             do{
                 printf("Enter Ward ID: ");
                 scanf("%d",&wardId[id]);
 
             }while(wardId[id]<1||wardId[id]>WARD_COUNT);
 
-            int wardindex=wardId[id]-1;
-            int bedAllocation=allocateBed(wardindex);
+            int wardIndex=wardId[id]-1;
+            int bedAllocation=allocateBed(wardIndex);
 
             if(bedAllocation!=-1){
                 assignedBed[id]=bedAllocation;
-                printf("Patient Assigned to %s (Bed No: %d)\n",WARD_NAMES[wardindex],bedAllocation+1);
+                printf("Patient Assigned to %s (Bed No: %d)\n",WARD_NAMES[wardIndex],bedAllocation+1);
             }
             else{
                 printf("Full Bed Capacity Has Been Reached.\n");
@@ -123,7 +131,8 @@ void patientIntake()
         }
 
         patientCount++;
-
+        calculationProcess(id);
+        displayBill(id);
 
 
 }

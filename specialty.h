@@ -5,6 +5,6 @@
 
 extern int specialtyDailyCount[SPECIALITY_COUNT];
 
-int allocateSpecialty(int specialtyIndex);
+int allocateSpecialty(int specialtyIdx);
 
 #endif

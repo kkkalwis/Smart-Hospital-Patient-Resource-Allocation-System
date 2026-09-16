@@ -2,10 +2,10 @@
 
 int specialtyDailyCount[SPECIALITY_COUNT]={0};
 
-int allocateSpecialty(int specialtyIndex){
+int allocateSpecialty(int specialtyIdx){
 
-    if(specialtyDailyCount[specialtyIndex]<DAILY_CAP[specialtyIndex]){
-        specialtyDailyCount[specialtyIndex]++;
+    if(specialtyDailyCount[specialtyIdx]<DAILY_CAP[specialtyIdx]){
+        specialtyDailyCount[specialtyIdx]++;
         return 1;
     }
     else{
