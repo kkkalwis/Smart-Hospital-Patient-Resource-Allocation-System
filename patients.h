@@ -5,6 +5,7 @@
 
 #define MAX_PATIENTS 100
 
+extern int patientId[MAX_PATIENTS];
 extern char patientName[MAX_PATIENTS][MAX_NAME_LEN];
 extern int patientAge[MAX_PATIENTS];
 extern int triageLevel[MAX_PATIENTS];

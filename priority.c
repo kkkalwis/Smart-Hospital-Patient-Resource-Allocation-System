@@ -28,6 +28,7 @@ void prioritySorting(int patientCount){
             if(triageLevel[j]<triageLevel[j+1]){
 
                 swapInt(&triageLevel[j],&triageLevel[j+1]);
+                swapInt(&patientId[j],&patientId[j+1]);
                 swapString(patientName[j],patientName[j+1]);
                 swapInt(&patientAge[j],&patientAge[j+1]);
                 swapInt(&specialtyId[j],&specialtyId[j+1]);

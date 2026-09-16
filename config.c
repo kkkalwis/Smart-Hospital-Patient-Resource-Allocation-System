@@ -1,6 +1,7 @@
 #include "config.h"
 
 const char SPECIALITY_NAMES[SPECIALITY_COUNT][MAX_NAME_LEN]={"General Practice (OPD)","Paediatrics","Cardiology","Neurology"};
+const char TRIAGE_NAMES[TRIAGE_COUNT][MAX_NAME_LEN]={"Normal","Urgent","Critical"};
 const double BASE_FEE[SPECIALITY_COUNT]={1500.00, 2500.00, 4500.00, 5000.00};
 const int CONSULT_TIME[SPECIALITY_COUNT]={15, 20, 30, 30};
 const int DAILY_CAP[SPECIALITY_COUNT]={30, 20, 12, 10};

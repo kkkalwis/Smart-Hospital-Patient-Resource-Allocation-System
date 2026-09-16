@@ -2,15 +2,16 @@
 #include "calculations.h"
 #include "patients.h"
 
+
 void calculationProcess(int id){
     patientWaitTime[id]=calcWaitingTime(specialtyIndex,specialtyQueueCount, CONSULT_TIME);
     specialtyQueueCount[specialtyIndex]++;
 
-    double surchargeAmount=calcSurcharge(id,specialtyIndex,triageLevel,BASE_FEE);
-    double wardCostAmount=calcTotalWardCost(id,wardIndex,admittedStatus,daysAdmitted,WARD_DAILY_RATES);
-    double grossTotalAmount=grossTotalBill(specialtyIndex,BASE_FEE,surchargeAmount,wardCostAmount);
-    double discountAmount=calcAgeDiscount(id,patientAge,grossTotalAmount);
-    double finalPaybleAmount=calcFinalAmount(grossTotalAmount,discountAmount);
+    surchargeAmount=calcSurcharge(id,specialtyIndex,triageLevel,BASE_FEE);
+    wardCostAmount=calcTotalWardCost(id,wardIndex,admittedStatus,daysAdmitted,WARD_DAILY_RATES);
+    grossTotalAmount=grossTotalBill(specialtyIndex,BASE_FEE,surchargeAmount,wardCostAmount);
+    discountAmount=calcAgeDiscount(id,patientAge,grossTotalAmount);
+    finalPaybleAmount=calcFinalAmount(grossTotalAmount,discountAmount);
     patientBill[id]=finalPaybleAmount;
 
 }
@@ -19,6 +20,7 @@ int calcWaitingTime(int specialtyIndex,int specialtyQueueCount[],const int CONSU
     int result= specialtyQueueCount[specialtyIndex] * CONSULT_TIME[specialtyIndex];
     return result;
 }
+
 
 double calcSurcharge(int id,int specialtyIndex,int triageLevel[],const double BASE_FEE[]){
 
@@ -59,3 +61,4 @@ double calcAgeDiscount(int id,int patientAge[],double grossTotalAmount){
 double calcFinalAmount(double grossTotalAmount,double discountAmount){
     return grossTotalAmount-discountAmount;
 }
+

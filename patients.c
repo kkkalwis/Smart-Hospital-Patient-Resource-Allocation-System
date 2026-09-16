@@ -3,8 +3,12 @@
 #include "patients.h"
 #include "bed.h"
 #include "specialty.h"
+#include "calcualtions.h"
+#include "priority.h"
+#include "display.h"
 
 
+int patientId[MAX_PATIENTS];
 char patientName[MAX_PATIENTS][MAX_NAME_LEN];
 int patientAge[MAX_PATIENTS];
 int triageLevel[MAX_PATIENTS];
@@ -15,6 +19,7 @@ int daysAdmitted[MAX_PATIENTS];
 int assignedBed[MAX_PATIENTS];
 int patientWaitTime[MAX_PATIENTS]={0};
 double patientBill[MAX_PATIENTS]={0};
+
 
 
 int patientCount=0;
@@ -28,6 +33,7 @@ void patientIntake()
 
     else{
         int id=patientCount;
+        patientId[id]=1001+id;
 
         printf("\n----PATIENT INTAKE PORTAL----\n");
 
@@ -117,6 +123,8 @@ void patientIntake()
         }
 
         patientCount++;
+
+
 
 }
 

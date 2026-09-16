@@ -9,6 +9,12 @@
 
 #define AGE_DISCOUNT 0.15
 
+extern double surchargeAmount;
+extern double wardCostAmount;
+extern double grossTotalAmount;
+extern double discountAmount;
+extern double finalPaybleAmount;
+
 void calculationProcess(int id);
 int calcWaitingTime(int specialtyIndex,int specialtyQueueCount[],const int CONSULT_TIME[]);
 double calcSurcharge(int id,int specialtyIndex,int triageLevel[],const double BASE_FEE[]);

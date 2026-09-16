@@ -5,8 +5,10 @@
 #define WARD_COUNT 4
 #define MAX_BEDS 20
 #define MAX_NAME_LEN 30
+#define TRIAGE_COUNT 3
 
 extern const char SPECIALITY_NAMES[SPECIALITY_COUNT][MAX_NAME_LEN];
+extern const char TRIAGE_NAMES[TRIAGE_COUNT][MAX_NAME_LEN];
 extern const double BASE_FEE[SPECIALITY_COUNT];
 extern const int CONSULT_TIME[SPECIALITY_COUNT];
 extern const int DAILY_CAP[SPECIALITY_COUNT];
