@@ -18,6 +18,7 @@ int wardId[MAX_PATIENTS];
 int daysAdmitted[MAX_PATIENTS];
 int assignedBed[MAX_PATIENTS];
 int patientWaitTime[MAX_PATIENTS]={0};
+double patientDiscount[MAX_PATIENTS]={0}
 double patientBill[MAX_PATIENTS]={0};
 
 
@@ -91,7 +92,7 @@ void patientIntake()
             printf("\n%-15s %-25s %-17s\n","Ward ID","Ward Name","Daily Bed Rate");
             printf("-----------------------------------------------------------\n");
 
-            for(int i=0;i<SPECIALITY_COUNT;i++){
+            for(int i=0;i<WARD_COUNT;i++){
                 printf("%-15d %-25s %-17.2f\n",i+1,WARD_NAMES[i],WARD_DAILY_RATES[i]);
             }
             do{

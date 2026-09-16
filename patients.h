@@ -15,6 +15,7 @@ extern int wardId[MAX_PATIENTS];
 extern int daysAdmitted[MAX_PATIENTS];
 extern int assignedBed[MAX_PATIENTS];
 extern int patientWaitTime[MAX_PATIENTS];
+extern double patientDiscount[MAX_PATIENTS];
 extern double patientBill[MAX_PATIENTS];
 
 

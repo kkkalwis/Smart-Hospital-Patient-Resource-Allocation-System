@@ -21,6 +21,7 @@ void calculationProcess(int id){
     wardCostAmount=calcTotalWardCost(id,wardIdx,admittedStatus,daysAdmitted,WARD_DAILY_RATES);
     grossTotalAmount=grossTotalBill(specialtyIdx,BASE_FEE,surchargeAmount,wardCostAmount);
     discountAmount=calcAgeDiscount(id,patientAge,grossTotalAmount);
+    patientDiscount[id]=discountAmount;
     finalPaybleAmount=calcFinalAmount(grossTotalAmount,discountAmount);
     patientBill[id]=finalPaybleAmount;
 
