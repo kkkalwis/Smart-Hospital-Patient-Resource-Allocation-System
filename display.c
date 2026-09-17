@@ -12,8 +12,7 @@ void displayBill(int id){
 
     printf("\n===============================================================\n");
     printf("          SMART HOSPITAL ADMISSION & BILL\n");
-    printf("---------------------------------------------------------------\n");
-
+    printf("===============================================================\n");
     printf("Patient ID              : PAT-%d\n",patientId[id]);
     printf("Patient Name            : %s\n",patientName[id]);
 
@@ -22,7 +21,7 @@ void displayBill(int id){
     printf("Specialty               : %s\n",SPECIALITY_NAMES[specialtyIdx]);
     printf("Assigned Ward           : %s (Bed #%d)\n",WARD_NAMES[wardIdx],assignedBed[id]+1);
     printf("Urgency Level           : Level %d (%s)\n",triageLevel[id],TRIAGE_NAMES[triageLevel[id]-1]);
-    printf("----------------------------------------------------------------\n");
+    printf("---------------------------------------------------------------\n");
     printf("Base Consultation Fee   : LKR %9.2f\n",BASE_FEE[specialtyIdx]);
 
     int surchargePct = (triageLevel[id] == 3) ? 50 : (triageLevel[id] == 2) ? 20 : 0;

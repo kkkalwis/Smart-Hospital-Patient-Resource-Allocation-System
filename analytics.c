@@ -20,15 +20,15 @@ void patientsByUrgencySummery(void){
         }
     }
 
-    printf("\n========================================\n");
-    printf("      PATIENT REGISTRATION BREAKDOWN\n");
-    printf("========================================\n");
+    printf("\n===============================================================\n");
+    printf("             PATIENT REGISTRATION BREAKDOWN\n");
+    printf("===============================================================\n");
     printf("Total Patients Registered : %d\n",patientCount);
-    printf("----------------------------------------\n");
+    printf("---------------------------------------------------------------\n");
     printf("  Critical (level 3)      : %d\n",level3Count);
     printf("  Urgent   (level 2)      : %d\n",level2Count);
     printf("  Normal   (level 1)      : %d\n",level1Count);
-    printf("========================================\n");
+    printf("===============================================================\n");
     
 }
 
@@ -43,13 +43,13 @@ void revenueAndDiscountSummery(void){
         totalRevenue+=patientBill[i];
     }
 
-    printf("\n========================================\n");
-    printf("      FINANTIAL SUMMERY\n");
-    printf("========================================\n");
+    printf("\n===============================================================\n");
+    printf("                   FINANTIAL SUMMERY\n");
+    printf("===============================================================\n");
     printf("Total Revenue Generated : %12.2f\n",totalRevenue);
-    printf("----------------------------------------\n");
+    printf("---------------------------------------------------------------\n");
     printf("Total Discounts Granted : %12.2f\n",totalDiscunts);
-    printf("========================================\n");
+    printf("===============================================================\n");
 
 }
 
@@ -58,31 +58,28 @@ void bedOccupancySummery(void){
     int wardOccupiedCount[WARD_COUNT]={0};
     
 
-    for(int i=0;i<patientCount;i++){
-        if(wardId[i]==1 && admittedStatus[i]==1){
-            wardOccupiedCount[0]++;
-        }
-        if(wardId[i]==2 && admittedStatus[i]==1){
-            wardOccupiedCount[1]++;
-        }
-        if(wardId[i]==3 && admittedStatus[i]==1){
-            wardOccupiedCount[2]++;
+    for (int w = 0; w < WARD_COUNT; w++) {
+        for (int b = 0; b < WARD_BED_CAP[w]; b++) {
+            if (bedOccupancy[w][b] == 1) {
+                wardOccupiedCount[w]++;
+            }
         }
     }
-    for(int i=0;i<WARD_COUNT;i++){
-        wardPercentage[i]=(float)(wardOccupiedCount[i]/WARD_BED_CAP[i])*100;
+
+    for (int i = 0; i < WARD_COUNT; i++) {
+        wardPercentage[i] = ((float)wardOccupiedCount[i] / WARD_BED_CAP[i]) * 100.0f;
     }
     
     
 
-    printf("\n=========================================================\n");
-    printf("           BED OCCUPANCY BREAKDOWN \n");
-    printf("=========================================================\n");
-     printf("%-15s %-25s %-17s\n","Ward ID","Ward Name","Daily Bed Rate");
+    printf("\n===============================================================\n");
+    printf("                  BED OCCUPANCY BREAKDOWN \n");
+    printf("===============================================================\n");
+    printf("%-15s %-25s %-17s\n","Ward ID","Ward Name","Bed Occupancy(%%)");
     for(int i=0;i<WARD_COUNT;i++){
         printf("%-15d %-25s %-17.2f\n",i+1,WARD_NAMES[i],wardPercentage[i]);
     }
-    printf("=========================================================\n");
+    printf("===============================================================\n");
 
     
 }
@@ -90,11 +87,11 @@ void bedOccupancySummery(void){
 void highestPayingPatient(void){
 
     if(patientCount==0){
-        printf("\n========================================\n");
-        printf("        HIGHEST PAYING PATIENT          \n");
-        printf("========================================\n");
+        printf("\n===============================================================\n");
+        printf("                  HIGHEST PAYING PATIENT          \n");
+        printf("===============================================================\n");
         printf("No patients registered in the system.\n");
-        printf("========================================\n");
+        printf("===============================================================\n");
         return;
     }
   
@@ -106,18 +103,18 @@ void highestPayingPatient(void){
         }
     }
 
-    printf("\n========================================\n");
-    printf("        HIGHEST PAYING PATIENT          \n");
-    printf("========================================\n");
+    printf("\n===============================================================\n");
+    printf("                   HIGHEST PAYING PATIENT          \n");
+    printf("===============================================================\n");
     printf("Highest Bill Amount : %.2f\n",highestPayment);
-    printf("----------------------------------------\n");
-    printf("Highest Paying Patient Name: \n");
+    printf("---------------------------------------------------------------\n");
+    printf("Highest Paying Patient Name (ID): \n");
 
     for (int i = 0; i < patientCount; i++) {
         if (patientBill[i] == highestPayment) {
-            printf(" - %s\n", patientName[i]);
+            printf(" - %s (PAT-%d)\n", patientName[i],patientId[i]);
         }
     }
-    printf("========================================\n");
+    printf("===============================================================\n");
 
 }

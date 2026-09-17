@@ -16,15 +16,15 @@ int main(){
     
     
     do {
-        printf("\n=================================================\n");
-        printf("   SMART HOSPITAL RESOURCE ALLOCATION SYSTEM     \n");
-        printf("=================================================\n");
+        printf("\n===============================================================\n");
+        printf("          SMART HOSPITAL RESOURCE ALLOCATION SYSTEM     \n");
+        printf("===============================================================\n");
         printf(" 1. Patient Intake & Billing                    \n");
         printf(" 2. Bed Occupancy Matrix                        \n");
         printf(" 3. Analytics & Reports Submenu                 \n");
         printf(" 4. displays registered patients in priority order\n");
         printf(" 5. Exit System                                 \n");
-        printf("=================================================\n");
+        printf("===============================================================\n");
         printf(" Enter choice (1-5): ");
 
         if (scanf("%d",&choice)!=1){
@@ -71,15 +71,15 @@ void subMenu(){
     int subChoice;
 
     do {
-        printf("\n-------------------------------------------------\n");
-        printf("         PERFORMANCE REPORTS & ANALYTICS         \n");
-        printf("-------------------------------------------------\n");
+        printf("\n===============================================================\n");
+        printf("                PERFORMANCE REPORTS & ANALYTICS         \n");
+        printf("===============================================================\n");
         printf(" 1. View Patient Intake & Urgency Breakdown     \n");
         printf(" 2. View Total Revenue & Discount Summary       \n");
         printf(" 3. View Ward Bed Occupancy Percentages         \n");
         printf(" 4. View Highest-Paying Patient Record          \n");
         printf(" 5. Back to Main Menu                           \n");
-        printf("-------------------------------------------------\n");
+        printf("===============================================================\n");
         printf(" Enter sub-option (1-5): ");
 
         fflush(stdout);

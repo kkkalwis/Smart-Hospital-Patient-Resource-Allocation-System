@@ -39,6 +39,7 @@ void patientIntake()
         printf("\n----PATIENT INTAKE PORTAL----\n");
 
         printf("\n1.Patient Details: \n");
+        printf("\n");
 
         printf("Enter Patient Name: ");
         scanf(" %29[^\n]", patientName[id]);
@@ -55,14 +56,16 @@ void patientIntake()
 
         printf("\n2.Specialty Selection: \n");
 
-        printf("Available Specialties\n");
-        printf("\n%-15s %-25s %-15s\n","specialty ID","Specialty Name","Base fee");
+        printf("\nAvailable Specialties\n");
+        printf("-----------------------------------------------------------\n");
+        printf("%-15s %-25s %-15s\n","specialty ID","Specialty Name","Base fee");
         printf("-----------------------------------------------------------\n");
 
         for(int i=0;i<SPECIALITY_COUNT;i++)
         {
             printf("%-15d %-25s %-15.2f\n",i+1,SPECIALITY_NAMES[i],BASE_FEE[i]);
         }
+        printf("-----------------------------------------------------------\n");
 
         do{
             printf("Enter Specialty ID(1 to 4): ");
@@ -79,6 +82,7 @@ void patientIntake()
         }
 
         printf("\n3.Ward Admission Details: \n");
+        printf("\n");
 
         do{
             printf("Enter Ward Admission status(1=IS Admitted,0=Not admitted): ");
@@ -88,13 +92,15 @@ void patientIntake()
 
         if(admittedStatus[id]==1){
 
-            printf("Available Wards\n");
-            printf("\n%-15s %-25s %-17s\n","Ward ID","Ward Name","Daily Bed Rate");
+            printf("\nAvailable Wards\n");
+            printf("-----------------------------------------------------------\n");
+            printf("%-15s %-25s %-17s\n","Ward ID","Ward Name","Daily Bed Rate");
             printf("-----------------------------------------------------------\n");
 
             for(int i=0;i<WARD_COUNT;i++){
                 printf("%-15d %-25s %-17.2f\n",i+1,WARD_NAMES[i],WARD_DAILY_RATES[i]);
             }
+            printf("-----------------------------------------------------------\n");
             do{
                 printf("Enter Ward ID: ");
                 scanf("%d",&wardId[id]);
