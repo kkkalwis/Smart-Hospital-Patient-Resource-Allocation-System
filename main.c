@@ -9,6 +9,7 @@
 #include "display.h"
 
 void subMenu();
+void showMenu();
 
 int main(){
 
@@ -37,10 +38,12 @@ int main(){
         switch(choice){
             case 1:
                 patientIntake();
+                showMenu();
                 break;
 
             case 2:
                 bedMetrix();
+                showMenu();
                 break;
 
 
@@ -50,6 +53,7 @@ int main(){
 
             case 4:
                 patientsByUrgencyList();
+                showMenu();
                 break;
 
             case 5:
@@ -96,18 +100,22 @@ void subMenu(){
         switch(subChoice){
             case 1:
             patientsByUrgencySummery();
+            showMenu();
             break;
 
             case 2:
             revenueAndDiscountSummery();
+            showMenu();
             break;
 
             case 3:
             bedOccupancySummery();
+            showMenu();
             break;
 
             case 4:
             highestPayingPatient();
+            showMenu();
             break;
 
             case 5:
@@ -122,4 +130,13 @@ void subMenu(){
     } while (subChoice != 5);
 
 
+}
+
+void showMenu(){
+    int ch;
+    printf("\nPress Enter to return to the menu...");
+        while ((ch = getchar()) != '\n' && ch != EOF)
+    {
+    }
+    getchar();
 }
