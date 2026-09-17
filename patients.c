@@ -42,7 +42,7 @@ void patientIntake()
         printf("\n");
 
         printf("Enter Patient Name: ");
-        scanf(" %29[^\n]", patientName[id]);
+        scanf(" %14[^\n]", patientName[id]);
 
         printf("Enter Patient Age: ");
         scanf("%d",&patientAge[id]);

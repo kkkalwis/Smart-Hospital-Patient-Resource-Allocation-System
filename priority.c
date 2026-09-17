@@ -50,11 +50,11 @@ void patientsByUrgencyList(){
 
     prioritySorting();
 
-    printf("\n=================================================================================\n");
-    printf("                       EMERGENCY PRIORITY TRIAGE QUEUE                          \n");
-    printf("=================================================================================\n");
-    printf(" %-5s | %-10s | %-18s | %-4s | %-18s | %-10s \n","Rank", "ID", "Name", "Age", "Urgency Level", "Wait Time");
-    printf("---------------------------------------------------------------------------------\n");
+    printf("\n=======================================================================================================\n");
+    printf("                                 EMERGENCY PRIORITY TRIAGE QUEUE                          \n");
+    printf("=======================================================================================================\n");
+    printf(" %-4s | %-8s | %-12s | %-3s | %-18s | %-12s | %-12s | %-8s\n","Rank", "ID", "Name", "Age", "Urgency Level","Specialty","Ward", "Wait Time");
+    printf("-------------------------------------------------------------------------------------------------------\n");
 
     for(int i=0;i<patientCount;i++){
         const char *UrgencyType;
@@ -74,16 +74,29 @@ void patientsByUrgencyList(){
                 break;
         }
 
+        const char *specialtyName=SPECIALITY_NAMES[specialtyId[i]-1];
+        const char *wardName;
 
-        printf(" #%-4d | PAT-%-6d | %-18s | %-4d | %-18s | %d mins\n",
+        if(admittedStatus[i]==1){
+            wardName=WARD_NAMES[wardId[i]-1];
+        }
+
+        else{
+            wardName="Outpatient";
+        }
+
+
+        printf(" %-4d | P%-7d | %-12.12s | %-3d | %-18s | %-12.12s | %-12.12s | %3d min\n",
                i + 1,
                patientId[i],
                patientName[i],
                patientAge[i],
                UrgencyType,
+               specialtyName,
+               wardName,
                patientWaitTime[i]);
     
     }
-    printf("=================================================================================\n");
+    printf("=======================================================================================================\n");
 }
 
