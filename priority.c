@@ -37,6 +37,7 @@ void prioritySorting(){
                 swapInt(&daysAdmitted[j],&daysAdmitted[j+1]);
                 swapInt(&assignedBed[j],&assignedBed[j+1]);
                 swapInt(&patientWaitTime[j],&patientWaitTime[j+1]);
+                swapDouble(&patientDiscount[j],&patientDiscount[j+1]);
                 swapDouble(&patientBill[j],&patientBill[j+1]);
 
             }
