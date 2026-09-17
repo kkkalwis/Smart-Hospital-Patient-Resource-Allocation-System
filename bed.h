@@ -5,5 +5,6 @@
 
 
 int allocateBed(int wardIndex);
+void bedMetrix();
 
 #endif

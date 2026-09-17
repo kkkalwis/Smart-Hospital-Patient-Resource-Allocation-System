@@ -1,6 +1,6 @@
 #include "specialty.h"
 
-int specialtyDailyCount[SPECIALITY_COUNT]={0};
+int specialtyDailyCount[SPECIALITY_COUNT];
 
 int allocateSpecialty(int specialtyIdx){
 

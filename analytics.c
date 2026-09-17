@@ -46,9 +46,9 @@ void revenueAndDiscountSummery(void){
     printf("\n========================================\n");
     printf("      FINANTIAL SUMMERY\n");
     printf("========================================\n");
-    printf("Total Revenue Generated : %12.2f",totalRevenue);
+    printf("Total Revenue Generated : %12.2f\n",totalRevenue);
     printf("----------------------------------------\n");
-    printf("Total Discounts Granted : %12.2f",totalDiscunts);
+    printf("Total Discounts Granted : %12.2f\n",totalDiscunts);
     printf("========================================\n");
 
 }
@@ -75,14 +75,14 @@ void bedOccupancySummery(void){
     
     
 
-    printf("\n===========================================\n");
-    printf("        BED OCCUPANCY BREAKDOWN \n");
-    printf("===========================================\n");
-     printf("\n%-15s %-25s %-17s\n","Ward ID","Ward Name","Daily Bed Rate");
+    printf("\n=========================================================\n");
+    printf("           BED OCCUPANCY BREAKDOWN \n");
+    printf("=========================================================\n");
+     printf("%-15s %-25s %-17s\n","Ward ID","Ward Name","Daily Bed Rate");
     for(int i=0;i<WARD_COUNT;i++){
         printf("%-15d %-25s %-17.2f\n",i+1,WARD_NAMES[i],wardPercentage[i]);
     }
-    printf("===========================================\n");
+    printf("=========================================================\n");
 
     
 }
@@ -102,7 +102,7 @@ void highestPayingPatient(void){
     
     for(int i=0;i<patientCount;i++){
         if(patientBill[i]>highestPayment){
-            highestPayment=patientBill[i]
+            highestPayment=patientBill[i];
         }
     }
 

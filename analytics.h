@@ -4,7 +4,7 @@
 #include "config.h"
 
 
-void patientsByUrgency(void);
+void patientsByUrgencySummery(void);
 void revenueAndDiscountSummery(void);
 void bedOccupancySummery(void);
 void highestPayingPatient(void);
