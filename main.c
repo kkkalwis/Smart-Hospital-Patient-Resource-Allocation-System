@@ -7,6 +7,7 @@
 #include "priority.h"
 #include "calculations.h"
 #include "display.h"
+#include "filehandling.h"
 
 void subMenu();
 void showMenu();
@@ -14,6 +15,7 @@ void showMenu();
 int main(){
 
     int choice;
+    loadBedStatus();
     
     
     do {
@@ -24,9 +26,11 @@ int main(){
         printf(" 2. Bed Occupancy Matrix                        \n");
         printf(" 3. Analytics & Reports Submenu                 \n");
         printf(" 4. displays registered patients in priority order\n");
-        printf(" 5. Exit System                                 \n");
+        printf(" 5. Display Complete Patient Billing Log\n");
+        printf(" 6. Clear All Logs\n");
+        printf(" 7. Exit System                                 \n");
         printf("===============================================================\n");
-        printf(" Enter choice (1-5): ");
+        printf(" Enter choice (1-7): ");
 
         if (scanf("%d",&choice)!=1){
             while (getchar() != '\n');
@@ -56,16 +60,27 @@ int main(){
                 showMenu();
                 break;
 
+
             case 5:
+                displayBillLog();
+                showMenu();
+                break; 
+                
+            case 6:
+                clearAllFiles();
+                showMenu();
+                break;    
+
+            case 7:
                 printf(" Exiting system. Goodbye!\n");
                 break;
 
             default:
-                printf(" Invalid option! Please select 1-5.\n");
+                printf(" Invalid option! Please select 1-7.\n");
                 break;
         }
 
-    } while (choice != 5);
+    } while (choice != 7);
 
     return 0;
 

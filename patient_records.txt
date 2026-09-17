@@ -1,0 +1,13 @@
+========================================
+Patient ID       : PAT-1001
+Patient Name     : kavisha
+Age              : 70
+Urgency Level    : 3
+Specialty        : Cardiology
+Ward ID          : 4
+Assigned Bed     : 1
+Days Admitted    : 2
+Discount         : 8512.50
+Final Bill       : 48237.50
+========================================
+

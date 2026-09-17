@@ -2,11 +2,13 @@
 #include "bed.h"
 #include "config.h"
 #include "patients.h"
+#include "filehandling.h"
 
 int allocateBed(int wardIndex){
     for(int i=0;i<WARD_BED_CAP[wardIndex];i++){
         if(bedOccupancy[wardIndex][i]==0){
             bedOccupancy[wardIndex][i]=1;
+            saveBedStatus();
             return i;
         }
     }

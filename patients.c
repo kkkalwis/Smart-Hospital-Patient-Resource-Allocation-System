@@ -6,6 +6,7 @@
 #include "calculations.h"
 #include "priority.h"
 #include "display.h"
+#include "filehandling.h"
 
 
 int patientId[MAX_PATIENTS];
@@ -140,6 +141,7 @@ void patientIntake()
         patientCount++;
         calculationProcess(id);
         displayBill(id);
+        appendPatientRecord(id);
 
 
 }
