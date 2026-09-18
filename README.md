@@ -42,12 +42,9 @@ A modular, console-based Hospital Management and Emergency Triage System written
 └── README.md
 
 
-# Clone the repository
-git clone [https://github.com/your-username/hospital-management-system.git](https://github.com/your-username/hospital-management-system.git)
-cd hospital-management-system
 
 # Compile all source files
-gcc -Wall -Iinclude src/*.c -o hospital_app
+gcc -Wall *.c -o hospital_app
 
 # Run the compiled executable
 hospital_app.exe
