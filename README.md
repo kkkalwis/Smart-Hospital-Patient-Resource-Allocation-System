@@ -1,4 +1,5 @@
 # Smart Hospital Management System (C Language)
+## INDEX:AS20250543
 
 A modular, console-based Hospital Management and Emergency Triage System written in C. The application handles real-time patient intake, priority queue sorting based on medical urgency, bed capacity tracking across hospital wards, itemized bill generation, and local file persistence.
 
